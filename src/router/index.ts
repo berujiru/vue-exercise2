@@ -16,6 +16,27 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "/post",
+    name: "postlist",
+    component: () =>
+      import(/* webpackChunkName: "postlist" */ "../views/PostListView.vue"),
+  },
+  {
+    path: "/post",
+    name: "postlist",
+    component: () =>
+      import(/* webpackChunkName: "postlist" */ "../views/PostListView.vue"),
+  },
+  {
+    path: "/post/:postID",
+    name: "postdetail",
+    component: () =>
+      import(
+        /* webpackChunkName: "postdetail" */ "../views/PostDetailView.vue"
+      ),
+    props: (route) => ({ postID: route.params.postID }),
+  },
 ];
 
 const router = createRouter({
